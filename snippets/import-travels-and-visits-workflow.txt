@@ -1,0 +1,20 @@
+1. copy and paste table into MS Word
+2. after pasting, click on the floating menu and select "Keep Text Only"
+3. remove document title header and any column headings, so only each visit's entry is left
+4. paste into oxygen
+5. do regular-expression find/replace:
+
+    find:
+      ^(.*?)\t(.*?)\t(.*?)\t(.*?)$
+    
+    FOR TRAVELS OF PRESIDENT & SECRETARY:
+    
+    replace with:
+      <trip><date>$1</date><country>$2</country><locale>$3</locale><remarks>$4</remarks></trip>
+    
+    FOR VISITS OF FOREIGN LEADERS:
+    
+    replace with:
+      <visit><date>$1</date><visitor>$2</visitor><from>$3</from><description>$4</description></visit>
+
+6. run scripts to add ids, timestamps, xs:dates, and country ids
