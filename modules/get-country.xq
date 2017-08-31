@@ -11,7 +11,7 @@ let $country-id :=
     if (empty($country-string) or $country-string = '') then 
         () 
     else (: if ($countries/label = $country-string) then :)
-        $countries[label eq $country-string]/id/string()
+        $countries[label eq $country-string or .//alternate-label eq $country-string]/id/string()
         (:    else:)
 (:        ( :)
 (:            response:set-status-code(400):)
