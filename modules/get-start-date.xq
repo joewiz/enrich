@@ -1,7 +1,7 @@
 xquery version "3.1";
 
-import module namespace iu = "http://history.state.gov/ns/xquery/import-utilities" at "/db/apps/tsv-helper/import-utilities.xqm";
-import module namespace dates = "http://xqdev.com/dateparser" at "/db/apps/tsv-helper/date-parser.xqm";
+import module namespace iu = "http://history.state.gov/ns/xquery/import-utilities" at "import-utilities.xqm";
+import module namespace dates = "http://xqdev.com/dateparser" at "date-parser.xqm";
 
 declare namespace output="http://www.w3.org/2010/xslt-xquery-serialization";
 
