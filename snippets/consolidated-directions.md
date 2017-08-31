@@ -210,7 +210,7 @@ Install the "enrich" app into eXist
         xquery version "3.1";
         
         let $start := max((collection('/db/apps/travels/president-travels')//id[. ne ''], collection('/db/apps/travels/secretary-travels')//id[. ne '']))
-        for $trip at $count in doc('/db/temp/obama-barack-2016.xml')//trip
+        for $trip at $count in doc('/db/obama-barack-2016.xml')//trip
         let $id := update value $trip/id with $start + $count
         return $trip
         ```
@@ -221,7 +221,7 @@ Install the "enrich" app into eXist
         xquery version "3.1";
         
         let $start := max((collection('/db/apps/travels/president-travels')//id[. ne ''], collection('/db/apps/travels/secretary-travels')//id[. ne '']))
-        for $trip at $count in doc('/db/temp/kerry-john-forbes-2016.xml')//trip
+        for $trip at $count in doc('/db/kerry-john-forbes-2016.xml')//trip
         let $id := update value $trip/id with $start + $count
         return $trip
         ```
@@ -232,11 +232,11 @@ Install the "enrich" app into eXist
         xquery version "3.1";
         
         let $start := max(collection('/db/apps/visits/data')//id[. ne ''])
-        for $visit at $count in doc('/db/temp/2010-new.xml')//visit
+        for $visit at $count in doc('/db/visits-2016.xml')//visit
         let $id := update value $visit/id with $start + $count
         return $visit
         ```
 
-1. Open the resulting temporary document and copy/paste all but the root element of the document into the destination file
+1. Open the resulting temporary document and copy/paste all but the root element of the document into the destination file, e.g., `/db/apps/travels/president-travels/obama-barack.xml`
 1. Upload the file to localhost and preview the results
 1. When the file is confirmed to look good, upload it to hsg and commit it to GitHub
