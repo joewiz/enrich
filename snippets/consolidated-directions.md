@@ -12,9 +12,9 @@ These directions explain how to take a submission from Evan Duncan with the late
 1. Select the "show editing marks" icon in the Word toolbar, to show tabs and returns. Delete any extra returns and extra copies of column headings (sometimes Evan included extra column headings at the top of pages). Keep the top column heading. Review the document for any unexpected formatting (entries split by a return, extra tabs, etc.). 
 1. This is your TSV file - tab-separated value. Paste it into a new oXygen file, and scan again for irregularities.
 
-## Prepare the "tsv-helper" app
+## Prepare the "enrich" app
 
-Install tsv-helper app into eXist
+Install the "enrich" app into eXist
 
 ## Enrich the data in OpenRefine
 
@@ -27,19 +27,19 @@ Install tsv-helper app into eXist
     
         - New column name: `country-id`
         
-        - Expression: `"http://localhost:8080/exist/apps/tsv-helper/get-country.xq?country=" + value.escape("url")`
+        - Expression: `"http://localhost:8080/exist/apps/enrich/modules/get-country.xq?country=" + value.escape("url")`
       
     - Date (1st pass for end date):
     
         - New column name: `end-date`
         
-        - Expression: `"http://localhost:8080/exist/apps/tsv-helper/get-end-date.xq?date=" + value.escape("url")`
+        - Expression: `"http://localhost:8080/exist/apps/enrich/modules/get-end-date.xq?date=" + value.escape("url")`
 
     - Date (2nd pass for start date):
     
         - New column name: `start-date`
         
-        - Expression: `"http://localhost:8080/exist/apps/tsv-helper/get-start-date.xq?date=" + value.escape("url")`
+        - Expression: `"http://localhost:8080/exist/apps/enrich/modules/get-start-date.xq?date=" + value.escape("url")`
 
 1. Check the resulting columns for any irregularities, such as blank cells where there should be a date or country ID. Enter values for these fields, correcting the field as appropriate.
 

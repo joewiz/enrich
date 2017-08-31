@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>Enrich</description>
+    <author>Joe Wicentowski</author>
+    <website>https://github.com/joewiz/enrich</website>
+    <status/>
+    <license/>
+    <copyright/>
+    <type>application</type>
+    <target>enrich</target>
+    <prepare/>
+    <finish/>
+    <permissions password="" user="hsg" group="hsg" mode="rw-rw-r--"/>
+</meta>
